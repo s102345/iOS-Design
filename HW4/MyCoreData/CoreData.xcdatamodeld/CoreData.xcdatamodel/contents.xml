@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G72" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Car" representedClassName=".Car" syncable="YES">
+        <attribute name="plate" optional="YES" attributeType="String"/>
+        <relationship name="belongto" maxCount="1" deletionRule="Nullify" destinationEntity="UserData" inverseName="own" inverseEntity="UserData"/>
+    </entity>
+    <entity name="UserData" representedClassName=".UserData" syncable="YES">
+        <attribute name="cid" optional="YES" attributeType="String"/>
+        <attribute name="cimage" optional="YES" attributeType="Binary"/>
+        <attribute name="cname" optional="YES" attributeType="String"/>
+        <relationship name="own" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Car" inverseName="belongto" inverseEntity="Car"/>
+    </entity>
+    <fetchRequest name="FtchRst_cname_BeginsA" entity="UserData" predicateString="cname BEGINSWITH &quot;A&quot;"/>
+    <elements>
+        <element name="Car" positionX="-337.935302734375" positionY="34.32183837890625" width="128" height="73"/>
+        <element name="UserData" positionX="-45.6597900390625" positionY="-154.9230346679688" width="128" height="103"/>
+    </elements>
+</model>

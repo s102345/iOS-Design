@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G72" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Car" representedClassName="Car" syncable="YES">
+        <attribute name="plate" optional="YES" attributeType="String"/>
+        <relationship name="belongto" maxCount="1" deletionRule="Nullify" destinationEntity="UserData" inverseName="own" inverseEntity="UserData"/>
+    </entity>
+    <entity name="UserData" representedClassName="UserData" syncable="YES">
+        <attribute name="cid" optional="YES" attributeType="String"/>
+        <attribute name="cimage" optional="YES" attributeType="Binary"/>
+        <attribute name="cname" optional="YES" attributeType="String"/>
+        <relationship name="own" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Car" inverseName="belongto" inverseEntity="Car"/>
+    </entity>
+    <elements>
+        <element name="Car" positionX="-310.7161865234375" positionY="33.9713134765625" width="128" height="73"/>
+        <element name="UserData" positionX="18.674560546875" positionY="43.72247314453125" width="128" height="103"/>
+    </elements>
+</model>
